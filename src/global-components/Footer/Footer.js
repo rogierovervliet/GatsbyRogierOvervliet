@@ -1,6 +1,6 @@
 // Components==============
 import Facebook from "assets/Facebook.svg";
-import LinkedIn from "assets/linkedIn.svg";
+import LinkedIn from "assets/LinkedIn.svg";
 import logo from "assets/Logo-Rogier-Overvliet2.svg";
 import WhatsApp from "assets/WhatsApp.svg";
 import React from "react";
