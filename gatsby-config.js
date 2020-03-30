@@ -3,18 +3,29 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: `New project`,
-    description: `undefined`,
-    author: `Roland Branten`
-    //siteUrl: ``,
+    title: `Rogier Overvliet`,
+    description: `Sociaal, betrouwbaar, verbindend & innovatief Wat heb ik te bieden? Personal Branding Hoe zie ik eruit? hoe kom ik voor de dag?  Als wij eerlijk zijn, doen jij en ik dit elke dag. We stellen onszelf meerdere keren per dag de vraag of wij wel de goede kleding aanhebben, of we wel het goede outfit … "home" verder lezen`,
+    author: `Roland Branten`,
+    siteUrl: `https://rogierovervliet.nl/`
   },
   plugins: [
-    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "lw6wxlgx",
+        dataset: "production",
+        token: process.env.SANITY_TOKEN,
+        graphqlTag: "default",
+        watchMode: true,
+        overlayDrafts: true
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,11 +43,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `new`,
-        short_name: `new`,
+        name: `Rogier Overvliet`,
+        short_name: `Rogier`,
         start_url: `/`,
-        background_color: `#fbf4ea`,
-        theme_color: `#fbf4ea`,
+        background_color: `rgba(66, 66, 136, 1)`,
+        theme_color: `rgba(66, 66, 136, 1)`,
         display: `standalone`,
         icon: `icon/icon.png`
       }

@@ -18,13 +18,13 @@ export default function Head({ title, description, keywords }) {
 
   return (
     <Helmet>
-      <meta name="theme-color" content="#fbf4ea" />
+      <meta name="theme-color" content="rgba(66, 66, 136, 1)" />
       <meta name="author" content="Roland Branten"></meta>
       <meta name="designer" content="Roland Branten"></meta>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <title>{`${siteTitle} | ${title}`}</title>
-      <html lang="en" />
+      <html lang="nl" />
     </Helmet>
   );
 }

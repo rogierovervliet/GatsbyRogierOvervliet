@@ -1,4 +1,5 @@
 // Components==============
+import logo from "assets/Logo-Rogier-Overvliet.svg";
 import { Link } from "gatsby";
 import { Container } from "mixins";
 import React, { useState } from "react";
@@ -21,6 +22,10 @@ const NavWrapper = styled.div`
       left: 0;
       z-index: 148;
     `}
+`;
+
+const Logo = styled.img`
+  width: 225px;
 `;
 
 const FlexContainer = styled(Container)`
@@ -68,7 +73,9 @@ export default function Nav() {
     <NavWrapper fixed={true}>
       <FlexContainer>
         <Hamburger menuState={menuState} changeMenu={changeMenu} />
-        <Link to="/">logo</Link>
+        <Link to="/">
+          <Logo src={logo} alt="logo-Rogier-Overvliet" />
+        </Link>
         <MenuItems>
           <Link to="/#home">
             <li>HOME</li>

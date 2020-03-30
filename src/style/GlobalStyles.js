@@ -1,7 +1,5 @@
 // Components==============
 import { createGlobalStyle } from "styled-components";
-import woff300 from "../assets/fonts/raleway-v14-latin-300.woff";
-import woff2_300 from "../assets/fonts/raleway-v14-latin-300.woff2";
 import woff500 from "../assets/fonts/raleway-v14-latin-500.woff";
 import woff2_500 from "../assets/fonts/raleway-v14-latin-500.woff2";
 import woff600 from "../assets/fonts/raleway-v14-latin-600.woff";
@@ -46,15 +44,6 @@ const GlobalStyles = createGlobalStyle`
    /* Font ====================================*/
    /* =========================================*/
 
-    /* raleway-300 - latin */
-    @font-face {
-   font-family: 'Raleway';
-   font-style: normal;
-   font-weight: 300;
-   src: local('Raleway Light'), local('Raleway-Light'),
-   url('${woff2_300}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-   url('${woff300}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-   }
    /* raleway-regular - latin */
    @font-face {
    font-family: 'Raleway';
