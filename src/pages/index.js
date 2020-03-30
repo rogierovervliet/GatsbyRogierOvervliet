@@ -11,7 +11,6 @@ export default function Index() {
         description="Page description goes here"
         keywords="content"
       />
-      <h1 style={{ marginTop: 200 }}>And yet another test 2</h1>
     </>
   );
 }
