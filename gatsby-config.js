@@ -46,8 +46,8 @@ module.exports = {
         name: `Rogier Overvliet`,
         short_name: `Rogier`,
         start_url: `/`,
-        background_color: `rgba(66, 66, 136, 1)`,
-        theme_color: `rgba(66, 66, 136, 1)`,
+        background_color: `#424288`,
+        theme_color: `#424288`,
         display: `standalone`,
         icon: `icon/icon.png`
       }
