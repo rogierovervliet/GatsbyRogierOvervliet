@@ -46,7 +46,6 @@ const VideoContainer = styled.div`
   @media screen and (min-width: 1250px) {
     margin: initial;
     align-self: center;
-    justify-self: end;
   }
 `;
 
