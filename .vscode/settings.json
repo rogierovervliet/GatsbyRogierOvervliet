@@ -16,7 +16,8 @@
     "package.json": true,
     "jsconfig.json": true,
     "page.js": true,
-    "root.js": true
+    "root.js": true,
+    // "sw-range-request-handler.js": true
   },
 
   "files.associations": {
