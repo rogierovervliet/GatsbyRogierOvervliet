@@ -1,7 +1,5 @@
 // Components==============
-import place from "assets/Components-float2.png";
-import mp4 from "assets/test.mp4";
-import webm from "assets/test.webm";
+import mp4 from "assets/test2.mp4";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -121,8 +119,6 @@ export default function Video() {
     >
       <VideoComp controls ref={videoRef}>
         <source src={mp4} type="video/mp4" />
-        <source src={webm} type="video/webm" />
-        <img src={place} alt="alt" />
       </VideoComp>
       {/* <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
