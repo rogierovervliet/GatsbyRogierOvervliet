@@ -117,7 +117,7 @@ export default function Video() {
       }}
       onClick={mute}
     >
-      <VideoComp controls ref={videoRef}>
+      <VideoComp controls muted autoPlay loop playsInline ref={videoRef}>
         <source src={mp4} type="video/mp4" />
       </VideoComp>
       {/* <Mute>
