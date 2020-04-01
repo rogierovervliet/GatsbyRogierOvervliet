@@ -122,7 +122,7 @@ export default function Video() {
         <source src={mp4} type="video/mp4" />
         <source src={webm} type="video/webm" />
       </VideoComp>
-      <Mute>
+      {/* <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
           <path
             id="color"
@@ -131,7 +131,7 @@ export default function Video() {
             transform="translate(-2.571 -3.856)"
           />
         </svg>
-      </Mute>
+      </Mute> */}
       <VideoBackground
         animate={hover ? "hover" : "noHover"}
         variants={{
