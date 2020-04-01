@@ -8,7 +8,7 @@ const Flex = styled.div`
 
   #tel {
     position: absolute;
-    top: -30px;
+    top: -35px;
     right: 0;
     font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   }

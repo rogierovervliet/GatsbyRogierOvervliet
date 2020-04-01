@@ -23,7 +23,7 @@ const MenuWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 150;
-  transition: 0.5s;
+  transition: 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@ const MenuWrapper = styled.div`
 
   ul {
     opacity: ${({ menuState }) => (menuState === "open" ? "1" : `0`)};
-    transition: 0.5s;
+    transition: 0.4s;
   }
 
   li {
@@ -60,7 +60,7 @@ const Blur = styled.div`
   background-color: black;
   top: 0;
   left: 0;
-  transition: 0.8s;
+  transition: 0.4s;
 `;
 
 export default function Menu({ menuState, changeMenu }) {

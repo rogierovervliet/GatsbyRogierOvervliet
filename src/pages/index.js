@@ -6,7 +6,10 @@ import Hero from "../macro-home/Hero";
 // =========================
 
 export default function Index({ data }) {
-  const hero = { titel: data.sanityHome.welkomTitel.nl };
+  const hero = {
+    titel: data.sanityHome.welkomTitel.nl,
+    tekst: data.sanityHome.welkomTekst.nl
+  };
 
   return (
     <>
@@ -24,6 +27,9 @@ export const query = graphql`
   query homeQuery {
     sanityHome {
       welkomTitel {
+        nl
+      }
+      welkomTekst {
         nl
       }
       titelEigenschappen {
