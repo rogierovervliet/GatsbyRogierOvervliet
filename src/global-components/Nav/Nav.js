@@ -2,9 +2,10 @@
 import logo from "assets/Logo-Rogier-Overvliet.svg";
 import { Link } from "gatsby";
 import { Container } from "mixins";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled, { css } from "styled-components";
 import { Button } from "../../style/Mixins";
+import { ModalContext } from "../Layout/Layout";
 import Hamburger from "./Hamburger";
 import Menu from "./Menu";
 // =========================
@@ -64,6 +65,7 @@ const MenuItems = styled.ul`
 
 export default function Nav() {
   const [menuState, setMenuState] = useState("closed");
+  const { handleChange } = useContext(ModalContext);
 
   function changeMenu() {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
@@ -86,11 +88,9 @@ export default function Nav() {
           <Link to="/#projecten">
             <li>OVER MIJ</li>
           </Link>
-          <Link to="/#contact">
-            <li>
-              <Button>CONTACT</Button>
-            </li>
-          </Link>
+          <li>
+            <Button onClick={handleChange}>CONTACT</Button>
+          </li>
         </MenuItems>
       </FlexContainer>
       <Menu

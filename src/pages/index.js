@@ -30,13 +30,7 @@ export const query = graphql`
         nl
       }
       _rawEigenschappen
-      headshot {
-        asset {
-          fluid(maxWidth: 700) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
+
       achtergrondAfbeelding {
         asset {
           fluid(maxWidth: 700) {

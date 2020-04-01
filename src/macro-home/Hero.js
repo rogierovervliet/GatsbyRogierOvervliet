@@ -15,14 +15,13 @@ const Wrapper = styled.div`
 `;
 
 const VideoWrap = styled.div`
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   position: relative;
 `;
 
 const VideoBackground = styled(motion.div)`
   background: ${({ theme: { primary } }) => primary.s4};
-  max-width: 900px;
   width: 100%;
   height: 100%;
   position: absolute;

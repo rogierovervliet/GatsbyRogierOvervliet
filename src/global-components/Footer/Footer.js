@@ -3,6 +3,7 @@ import Facebook from "assets/Facebook.svg";
 import LinkedIn from "assets/LinkedIn.svg";
 import logo from "assets/Logo-Rogier-Overvliet2.svg";
 import WhatsApp from "assets/WhatsApp.svg";
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import { Container } from "../../style/Mixins";
@@ -31,23 +32,33 @@ const Grid = styled(Container)`
   }
 `;
 
-const OneLiner = styled.p`
-  display: none;
-  color: ${({ theme: { white } }) => white};
-  font-size: 26px;
-  width: 350px;
-  font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
-
-  @media screen and (min-width: 1000px) {
-    display: block;
-  }
-`;
-
 const Logo = styled.img`
   width: 100px;
 
   @media screen and (min-width: 1000px) {
     grid-column: 2;
+  }
+`;
+
+const ContactGegevens = styled.div`
+  display: none;
+
+  @media screen and (min-width: 1000px) {
+    display: block;
+  }
+
+  div {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s2};
+  }
+
+  p,
+  a {
+    color: white;
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  }
+
+  a {
+    cursor: pointer;
   }
 `;
 
@@ -67,10 +78,40 @@ const Contact = styled.div`
 `;
 
 export default function Footer() {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      sanityContact {
+        telefoon {
+          nl
+        }
+        plaats {
+          nl
+        }
+        mail {
+          nl
+        }
+      }
+    }
+  `);
+
   return (
     <FooterWrap>
       <Grid>
-        <OneLiner>{`Sociaal, betrouwbaar, verbindend & innovatief`}</OneLiner>
+        <ContactGegevens>
+          <div>
+            <p>{data.sanityContact.plaats.nl}</p>
+          </div>
+          <div>
+            <a href={`tel:${data.sanityContact.telefoon.nl}`}>
+              {data.sanityContact.telefoon.nl}{" "}
+            </a>
+          </div>
+          <div>
+            <a href={`mailto:${data.sanityContact.mail.nl}`}>
+              {data.sanityContact.mail.nl}{" "}
+            </a>
+          </div>
+        </ContactGegevens>
         <Logo src={logo} alt="logo-Rogier-Overvliet" />
         <Contact>
           <a

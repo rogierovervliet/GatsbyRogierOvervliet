@@ -1,8 +1,9 @@
 // Components==============
 import { Link } from "gatsby";
 import { Container } from "mixins";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ModalContext } from "../Layout/Layout";
 // =========================
 
 const Hide = styled.div`
@@ -42,6 +43,10 @@ const MenuWrapper = styled.div`
       color: ${({ theme: { primary } }) => primary.s4};
     }
   }
+
+  button {
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+  }
 `;
 
 const Blur = styled.div`
@@ -59,6 +64,8 @@ const Blur = styled.div`
 `;
 
 export default function Menu({ menuState, changeMenu }) {
+  const { handleChange } = useContext(ModalContext);
+
   return (
     <Hide>
       <MenuWrapper menuState={menuState}>
@@ -80,9 +87,14 @@ export default function Menu({ menuState, changeMenu }) {
               </Link>
             </li>
             <li>
-              <Link onClick={changeMenu} to="/#contact">
+              <button
+                onClick={() => {
+                  handleChange();
+                  changeMenu();
+                }}
+              >
                 CONTACT
-              </Link>
+              </button>
             </li>
           </ul>
         </Container>

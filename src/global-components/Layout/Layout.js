@@ -1,7 +1,8 @@
 // Components==============
-import React from "react";
+import React, { useState } from "react";
 import { hot } from "react-hot-loader/root";
 import styled, { ThemeProvider } from "styled-components";
+import ContactForm from "../../macro-contact/index";
 import GlobalStyles from "../../style/GlobalStyles";
 import { Variables } from "../../style/themes";
 import Footer from "../Footer/Footer";
@@ -15,16 +16,32 @@ const Body = styled.div`
   margin-top: ${({ theme: { spacing } }) => spacing.s9};
 `;
 
+export const ModalContext = React.createContext();
+
 function Layout({ children, location }) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleChange = () => {
+    modalIsOpen === true ? setModalIsOpen(false) : setModalIsOpen(true);
+  };
+
+  const modalValue = {
+    modalIsOpen,
+    handleChange
+  };
+
   // CODE ABOVE THIS LINE
   if (location.pathname === "/offline-plugin-app-shell-fallback") return null;
   return (
     <ThemeProvider theme={Variables}>
-      <IEWarning />
-      <Nav />
-      <Body>{children}</Body>
-      <Footer />
-      <GlobalStyles />
+      <ModalContext.Provider value={modalValue}>
+        <IEWarning />
+        <Nav />
+        <Body>{children}</Body>
+        <ContactForm />
+        <Footer />
+        <GlobalStyles />
+      </ModalContext.Provider>
     </ThemeProvider>
   );
 }
