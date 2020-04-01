@@ -55,10 +55,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        appendScript: require.resolve(`./sw-range-request-handler`)
+        workboxConfig: {
+          runtimeCaching: [
+            {
+              urlPattern: /.*\.mp4/,
+              handler: `NetworkOnly`
+            }
+          ]
+        }
       }
     },
-
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
