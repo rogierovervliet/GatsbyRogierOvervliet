@@ -52,7 +52,13 @@ module.exports = {
         icon: `icon/icon.png`
       }
     },
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        appendScript: require.resolve(`./sw-range-request-handler.js`)
+      }
+    },
+
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
