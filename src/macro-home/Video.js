@@ -1,5 +1,6 @@
 // Components==============
 import mp4 from "assets/test.mp4";
+import webm from "assets/test.webm";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -119,6 +120,7 @@ export default function Video() {
     >
       <VideoComp controls autoPlay muted loop playsInline ref={videoRef}>
         <source src={mp4} type="video/mp4" />
+        <source src={webm} type="video/webm" />
       </VideoComp>
       <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
