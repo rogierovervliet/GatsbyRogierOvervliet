@@ -1,9 +1,13 @@
 // Components==============
+import { graphql } from "gatsby";
 import React from "react";
 import Head from "../global-components/Layout/Head";
+import Hero from "../macro-home/Hero";
 // =========================
 
 export default function Index({ data }) {
+  const hero = { titel: data.sanityHome.welkomTitel.nl };
+
   return (
     <>
       <Head
@@ -11,17 +15,37 @@ export default function Index({ data }) {
         description="Page description goes here"
         keywords="content"
       />
-      <h1>{data.sanityHome.WelkomTitel.nl}</h1>
+      <Hero content={hero} />
     </>
   );
 }
 
 export const query = graphql`
-  query PageQ {
+  query homeQuery {
     sanityHome {
-      WelkomTitel {
+      welkomTitel {
         nl
       }
+      titelEigenschappen {
+        nl
+      }
+      _rawEigenschappen
+      headshot {
+        asset {
+          fluid(maxWidth: 700) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      achtergrondAfbeelding {
+        asset {
+          fluid(maxWidth: 700) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      _rawQuote
+      _rawReferenties
     }
   }
 `;

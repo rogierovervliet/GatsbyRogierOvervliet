@@ -10,7 +10,7 @@ import { Container } from "../../style/Mixins";
 
 const FooterWrap = styled.div`
   height: 200px;
-  background: ${({ theme: { primary } }) => primary.s6};
+  background: ${({ theme: { primary } }) => primary.s4};
 `;
 
 const Grid = styled(Container)`

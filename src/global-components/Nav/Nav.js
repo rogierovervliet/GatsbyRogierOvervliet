@@ -11,7 +11,7 @@ import Menu from "./Menu";
 
 const NavWrapper = styled.div`
   background: ${({ theme: { white } }) => white};
-  width: 100vw;
+  width: 100%;
   box-shadow: ${({ theme: { shadow } }) => shadow.small};
 
   ${({ fixed }) =>
