@@ -83,10 +83,10 @@ const Mute = styled.div`
     }
   }
 
-  opacity: 0;
+  display: none;
   @media screen and (min-width: 1250px) {
     cursor: pointer;
-    opacity: 1;
+    display: block;
   }
 `;
 
@@ -118,7 +118,7 @@ export default function Video() {
       }}
       onClick={mute}
     >
-      <VideoComp controls autoPlay muted loop playsInline ref={videoRef}>
+      <VideoComp controls muted loop playsInline ref={videoRef}>
         <source src={mp4} type="video/mp4" />
         <source src={webm} type="video/webm" />
       </VideoComp>
