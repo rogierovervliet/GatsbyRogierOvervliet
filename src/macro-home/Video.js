@@ -1,4 +1,7 @@
 // Components==============
+import place from "assets/Components-float2.png";
+import mp4 from "assets/test.mp4";
+import webm from "assets/test.webm";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -19,7 +22,7 @@ const VideoWrap = styled.div`
   }
 `;
 
-const VideoComp = styled.iframe`
+const VideoComp = styled.video`
   max-width: 100%;
   position: relative;
 `;
@@ -116,30 +119,11 @@ export default function Video() {
       }}
       onClick={mute}
     >
-      <div
-        style={{
-          width: `100%`,
-          height: `0px`,
-          position: `relative`,
-          paddingBottom: `56.250%`
-        }}
-      >
-        <iframe
-          title="test"
-          src="https://streamable.com/s/2ayn6/itjokc"
-          frameborder="0"
-          width="100%"
-          height="100%"
-          style={{
-            width: `100%`,
-            height: `100%`,
-            position: `absolute`,
-            left: `0px`,
-            top: `0px`,
-            overflow: `hidden`
-          }}
-        ></iframe>
-      </div>
+      <VideoComp controls muted loop playsInline autoPlay ref={videoRef}>
+        <source src={mp4} type="video/mp4" />
+        <source src={webm} type="video/webm" />
+        <img src={place} alt="alt" />
+      </VideoComp>
       {/* <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
           <path

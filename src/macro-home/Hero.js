@@ -30,7 +30,7 @@ const TekstContainer = styled.div`
   @media screen and (min-width: 1250px) {
     margin: initial;
     align-self: center;
-    transform: translateY(-10vh);
+    transform: translateY(-8vh);
   }
 `;
 
@@ -46,6 +46,7 @@ const VideoContainer = styled.div`
   @media screen and (min-width: 1250px) {
     margin: initial;
     align-self: center;
+    justify-self: end;
   }
 `;
 
