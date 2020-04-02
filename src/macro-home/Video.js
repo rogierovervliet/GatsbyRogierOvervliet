@@ -123,7 +123,7 @@ export default function Video() {
         loop
         playsInline
         ref={videoRef}
-        crossOrigin="anonymous"
+        // crossOrigin="anonymous"
       >
         <source src={`${mp4}#t=0.1`} type="video/mp4" />
       </VideoComp>
