@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Overflow = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow-x: hidden;
 `;
 
