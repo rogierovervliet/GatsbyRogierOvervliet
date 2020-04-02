@@ -16,6 +16,27 @@ export const Button = styled.button`
   }
 `;
 
+// BlockStyling
+
+export const BlockStyling = styled.div`
+  p {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+    line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
+  }
+
+  blockquote::before {
+    content: open-quote;
+  }
+
+  blockquote::after {
+    content: close-quote;
+  }
+
+  blockquote {
+    quotes: "“" "”" "‘" "’";
+  }
+`;
+
 // FLex unit
 
 export function flexUnit(amount, min, max, unit = "vw", prop = "font-size") {
