@@ -31,7 +31,7 @@ function Layout({ children, location }) {
   };
 
   // CODE ABOVE THIS LINE
-  if (location.pathname === "/offline-plugin-app-shell-fallback") return null;
+  // if (location.pathname === "/offline-plugin-app-shell-fallback") return null;
   return (
     <ThemeProvider theme={Variables}>
       <ModalContext.Provider value={modalValue}>
