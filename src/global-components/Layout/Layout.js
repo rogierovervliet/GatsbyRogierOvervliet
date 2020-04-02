@@ -18,7 +18,7 @@ const Body = styled.div`
 
 export const ModalContext = React.createContext();
 
-function Layout({ children, location }) {
+function Layout({ children }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleChange = () => {
