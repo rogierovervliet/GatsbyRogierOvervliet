@@ -1,4 +1,4 @@
-var nav = window.navigator;
+var nav = typeof window !== undefined && window.navigator;
 var ua = nav.userAgent;
 
 let is_safari =

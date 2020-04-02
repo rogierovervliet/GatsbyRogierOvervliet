@@ -10,13 +10,13 @@
     "desktop.ini": true,
     "gatsby-browser.js": true,
     "gatsby-node.js": true,
-    // "gatsby-config.js": true,
+    "gatsby-config.js": true,
     "gatsby-ssr.js": true,
     "package-lock.json": true,
     "package.json": true,
     "jsconfig.json": true,
-    "page.js": true
-    // "root.js": true,
+    "page.js": true,
+    "root.js": true
     // "sw-range-request-handler.js": true
   },
 
