@@ -100,7 +100,7 @@ export default function Video() {
     typeof window !== "undefined" && window.matchMedia("(min-width: 1250px)");
 
   const videoQuery =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 462px)");
+    typeof window !== "undefined" && window.matchMedia("(min-width: 700px)");
 
   const mute = () => {
     if (hover) {
