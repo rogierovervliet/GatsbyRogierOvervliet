@@ -1,6 +1,7 @@
 // Components==============
 import placeholder from "assets/placeholder.jpg";
 import mp4 from "assets/rogierPromo.mp4";
+import mp4Small from "assets/rogierPromoMobile.mp4";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -98,6 +99,9 @@ export default function Video() {
   const query =
     typeof window !== "undefined" && window.matchMedia("(min-width: 1250px)");
 
+  const videoQuery =
+    typeof window !== "undefined" && window.matchMedia("(min-width: 462px)");
+
   const mute = () => {
     if (hover) {
       videoRef.current.muted
@@ -128,7 +132,11 @@ export default function Video() {
         crossOrigin="anonymous"
         poster={placeholder}
       >
-        <source src={mp4} type="video/mp4" />
+        {videoQuery.matches ? (
+          <source src={mp4} type="video/mp4" />
+        ) : (
+          <source src={mp4Small} type="video/mp4" />
+        )}
       </VideoComp>
       <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
