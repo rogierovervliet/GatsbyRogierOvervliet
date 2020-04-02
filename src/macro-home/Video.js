@@ -1,4 +1,5 @@
 // Components==============
+import placeholder from "assets/placeholder.jpg";
 import mp4 from "assets/test.mp4";
 import { motion } from "framer-motion";
 import React, { useRef, useState } from "react";
@@ -118,15 +119,16 @@ export default function Video() {
       onClick={mute}
     >
       <VideoComp
-        control
+        controls
         muted
         // autoPlay
         loop
         playsInline
         ref={videoRef}
         crossOrigin="anonymous"
+        poster={placeholder}
       >
-        <source src={`${mp4}#t=0.1`} type="video/mp4" />
+        <source src={mp4} type="video/mp4" />
       </VideoComp>
       {/* <Mute>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300.975 601.951">
