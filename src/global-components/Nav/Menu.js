@@ -72,17 +72,17 @@ export default function Menu({ menuState, changeMenu }) {
         <Container>
           <ul>
             <li>
-              <Link onClick={changeMenu} to="/#home">
+              <Link onClick={changeMenu} to="/">
                 HOME
               </Link>
             </li>
             <li>
-              <Link onClick={changeMenu} to="/#overMij">
+              <Link onClick={changeMenu} to="/blog">
                 BLOG
               </Link>
             </li>
             <li>
-              <Link onClick={changeMenu} to="/#projecten">
+              <Link onClick={changeMenu} to="/overMij">
                 OVER MIJ
               </Link>
             </li>

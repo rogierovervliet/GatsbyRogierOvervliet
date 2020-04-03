@@ -79,13 +79,13 @@ export default function Nav() {
           <Logo src={logo} alt="logo-Rogier-Overvliet" />
         </Link>
         <MenuItems>
-          <Link to="/#home">
+          <Link to="/">
             <li>HOME</li>
           </Link>
-          <Link to="/#overMij">
+          <Link to="/blog">
             <li>BLOG</li>
           </Link>
-          <Link to="/#projecten">
+          <Link to="/overMij">
             <li>OVER MIJ</li>
           </Link>
           <li>

@@ -35,6 +35,40 @@ export const BlockStyling = styled.div`
   blockquote {
     quotes: "“" "”" "‘" "’";
   }
+
+  ul {
+    margin-left: ${({ theme: { spacing } }) => spacing.s7};
+
+    li {
+      list-style: initial;
+    }
+  }
+
+  ol {
+    margin-left: ${({ theme: { spacing } }) => spacing.s7};
+
+    li {
+      list-style: upper-greek;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    border-bottom: 1px solid
+      ${({ theme: { primary } }) => primary.s4.replace("1)", "0.3)")};
+    box-shadow: 0px -4px 0px ${({ theme: { primary } }) =>
+        primary.s4.replace("1)", "0.3)")} inset;
+    transition: 0.2s;
+
+    &:hover {
+      border-bottom: 1px solid
+        ${({ theme: { primary } }) => primary.s4.replace("1)", "0)")};
+      box-shadow: 0px -4px 0px ${({ theme: { primary } }) =>
+          primary.s4.replace("1)", "0)")} inset;
+      background-color: ${({ theme: { primary } }) =>
+        primary.s4.replace("1)", "0.3)")};
+    }
+  }
 `;
 
 // FLex unit

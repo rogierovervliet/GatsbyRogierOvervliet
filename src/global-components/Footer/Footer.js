@@ -2,6 +2,7 @@
 import Facebook from "assets/Facebook.svg";
 import LinkedIn from "assets/LinkedIn.svg";
 import logo from "assets/Logo-Rogier-Overvliet2.svg";
+import SDGC from "assets/SDGC.svg";
 import WhatsApp from "assets/WhatsApp.svg";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
@@ -64,9 +65,8 @@ const ContactGegevens = styled.div`
 
 const Contact = styled.div`
   display: flex;
-  width: 150px;
   justify-content: space-between;
-  justify-self: end;
+  width: 150px;
 
   img {
     width: 35px;
@@ -74,6 +74,27 @@ const Contact = styled.div`
     &:hover {
       transform: scale(1.05);
     }
+  }
+`;
+
+const Flex = styled.div`
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: end;
+`;
+
+const SDG = styled.a`
+  display: none;
+
+  @media screen and (min-width: 1000px) {
+    display: block;
+  }
+
+  img {
+    width: 325px;
+    margin-top: ${({ theme: { spacing } }) => spacing.s6};
   }
 `;
 
@@ -113,29 +134,38 @@ export default function Footer() {
           </div>
         </ContactGegevens>
         <Logo src={logo} alt="logo-Rogier-Overvliet" />
-        <Contact>
-          <a
-            href="https://www.linkedin.com/in/rogierovervliet/"
+        <Flex>
+          <Contact>
+            <a
+              href="https://www.linkedin.com/in/rogierovervliet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={LinkedIn} alt="LinkedIn" />
+            </a>
+            <a
+              href="https://www.facebook.com/rogier.overvliet"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={Facebook} alt="Facebook" />
+            </a>
+            <a
+              href="https://api.whatsapp.com/send?phone=+31627994488"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={WhatsApp} alt="WhatsApp" />
+            </a>
+          </Contact>
+          <SDG
+            href="https://www.sdgnederland.nl/user/rogierovervliet/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={LinkedIn} alt="LinkedIn" />
-          </a>
-          <a
-            href="https://www.facebook.com/rogier.overvliet"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={Facebook} alt="Facebook" />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=+31627994488"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={WhatsApp} alt="WhatsApp" />
-          </a>
-        </Contact>
+            <img src={SDGC} alt="SDGC" />
+          </SDG>
+        </Flex>
       </Grid>
     </FooterWrap>
   );
