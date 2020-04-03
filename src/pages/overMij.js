@@ -15,11 +15,7 @@ export default function overMij({ data }) {
 
   return (
     <>
-      <Head
-        title="Over mij"
-        description="Page description goes here"
-        keywords="content"
-      />
+      <Head title="Over mij" description={`Rogier Overvliet Onrecht ombuigen naar rechtvaardigheid. Op het gebied van de arbeidsmarkt is dit voor mij een van de fundamenten van alle dagelijkse werkzaamheden. Het mag niet zo zijn dat ik, jij en wij toekijken hoe een samenleving de arbeidsmarkt, die in mijn ogen de brandstof is voor de economie op slot zet voor mensen … "x over mij" verder lezen`} />
       <About content={about} />
     </>
   );

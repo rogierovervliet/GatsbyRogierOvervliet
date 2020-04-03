@@ -47,7 +47,7 @@ export default function Overview({ content }) {
     const image = e.Afbeelding.asset.fluid;
 
     return (
-      <Card img={image} alt={title}>
+      <Card img={image} alt={title} key={title}>
         <Title>{title}</Title>
 
         <LinkWrap to={`/${slug}`}>

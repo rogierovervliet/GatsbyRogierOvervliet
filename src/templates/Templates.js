@@ -19,8 +19,10 @@ export default function Templates({ data }) {
     <>
       <Head
         title={content.title}
-        description="Page description goes here"
-        keywords="content"
+        description={`${content.text.nl[0].children[0].text.slice(
+          0,
+          150
+        )}…  verder lezen`}
       />
       <Template content={content} />
     </>

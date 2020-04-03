@@ -10,8 +10,7 @@ export default function blog({ data }) {
     <>
       <Head
         title="Blog"
-        description="Page description goes here"
-        keywords="content"
+        description="Blog posts geschreven door Rogier Overvliet"
       />
       <Overview content={data.allSanityBlogPost.nodes} />
     </>

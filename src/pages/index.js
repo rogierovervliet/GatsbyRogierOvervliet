@@ -31,8 +31,7 @@ export default function Index({ data }) {
     <>
       <Head
         title="Home"
-        description="Page description goes here"
-        keywords="content"
+        description={`Sociaal, betrouwbaar, verbindend & innovatief Wat heb ik te bieden? Personal Branding Hoe zie ik eruit? hoe kom ik voor de dag?  Als wij eerlijk zijn, doen jij en ik dit elke dag. We stellen onszelf meerdere keren per dag de vraag of wij wel de goede kleding aanhebben, of we wel het goede outfit … "home" verder lezen`}
       />
       <Hero content={hero} />
       <Services content={service} />

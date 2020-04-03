@@ -3,19 +3,19 @@ import Img from "gatsby-image";
 import React from "react";
 import styled from "styled-components";
 import Block from "../micro-components/Block";
-import { BlockStyling } from "../style/Mixins";
+import { BlockStyling, flexUnit } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
   margin-top: ${({ theme: { spacing } }) => spacing.s10};
+`;
 
-  h2 {
-    text-align: center;
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s7};
+const MainTitle = styled.h2`
+  text-align: center;
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s7};
 
-    @media screen and (min-width: 800px) {
-      margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
-    }
+  @media screen and (min-width: 800px) {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
   }
 `;
 
@@ -52,10 +52,6 @@ const Service = styled.div`
   @media screen and (min-width: 1600px) {
     margin-bottom: ${({ theme: { spacing }, serviceIndex }) =>
       serviceIndex !== 3 && spacing.s13};
-  }
-
-  h3 {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
   }
 
   .justify {
@@ -131,6 +127,11 @@ const Service = styled.div`
   }
 `;
 
+const Title = styled.h2`
+  ${flexUnit(2, 21, 25, "vw", "font-size")};
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+`;
+
 const Style = styled(BlockStyling)`
   max-width: 700px;
 `;
@@ -157,7 +158,7 @@ export default function Services({ content }) {
     return (
       <Service key={name} position={isEven(index)} serviceIndex={index}>
         <div className="justify">
-          <h3>{name}</h3>
+          <Title>{name}</Title>
           <Style>
             <Block content={text} />
           </Style>
@@ -172,7 +173,7 @@ export default function Services({ content }) {
   return (
     <Wrapper>
       <CustomContainer>
-        <h2>{content.titel}</h2>
+        <MainTitle>{content.titel}</MainTitle>
         {services}
       </CustomContainer>
     </Wrapper>

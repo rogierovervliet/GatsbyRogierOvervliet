@@ -13,11 +13,7 @@ export default function visie({ data }) {
 
   return (
     <>
-      <Head
-        title="Visie"
-        description="Page description goes here"
-        keywords="content"
-      />
+      <Head title="Visie" description={`Mijn motivatie maakt een vertaalslag van het verleden, met een brug in het heden naar de toekomst van de volgende generatie. Dit komt tot uiting in de betrokkenheid naar de kwetsbaren in de samenleving en op de arbeidsmarkt. … "x over mij" verder lezen`} />
       <Vision content={vision} />
     </>
   );

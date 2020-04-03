@@ -111,7 +111,7 @@ export default function Content({ content }) {
             <Title>{content.title}</Title>
             <PictureWrapMobile>
               <Background />
-              <IMG fluid={content.headshot} alt="Roland Branten" />
+              <IMG fluid={content.headshot} alt="Rogier Overvliet" />
             </PictureWrapMobile>
             <div>
               <Text>

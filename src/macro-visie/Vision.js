@@ -45,8 +45,6 @@ const ScreenFiller = styled.div`
 `;
 
 export default function Vision({ content }) {
-  console.log(content.tekst);
-
   return (
     <Wrapper>
       <CustomContainer>
