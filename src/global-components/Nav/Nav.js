@@ -51,14 +51,22 @@ const MenuItems = styled.ul`
   }
 
   li {
+    a {
+    }
     padding-left: ${({ theme: { spacing } }) => spacing.s8};
     transition: 0.2s;
-    color: ${({ theme: { gray } }) => gray.s7};
-    font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+
+    a {
+      color: ${({ theme: { gray } }) => gray.s7};
+      font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
+    }
 
     &:hover {
       transform: translateY(-2px);
-      color: ${({ theme: { primary } }) => primary.s7};
+
+      a {
+        color: ${({ theme: { primary } }) => primary.s7};
+      }
     }
   }
 `;
@@ -90,16 +98,15 @@ export default function Nav() {
           <Logo src={logo} alt="logo-Rogier-Overvliet" />
         </Link>
         <MenuItems>
-          <Link to="/overMij">
-            <li>OVER MIJ</li>
-          </Link>
-          <Link to="/visie">
-            <li>VISIE</li>
-          </Link>
-          <Link to="/blog">
-            <li>BLOG</li>
-          </Link>
-
+          <li>
+            <Link to="/overMij">OVER MIJ</Link>
+          </li>
+          <li>
+            <Link to="/visie">VISIE</Link>
+          </li>
+          <li>
+            <Link to="/blog">BLOG</Link>
+          </li>
           <li>
             <Button onClick={handleChange}>CONTACT</Button>
           </li>
