@@ -14,8 +14,7 @@ const Hide = styled.div`
 
 const MenuWrapper = styled.div`
   background-color: ${({ theme: { white } }) => white};
-  width: ${({ menuState, theme: { spacing } }) =>
-    menuState === "open" ? spacing.s13 : `0`};
+  width: ${({ menuState }) => (menuState === "open" ? `300px` : `0`)};
   visibility: ${({ menuState }) =>
     menuState === "open" ? "visible" : `hidden`};
   position: fixed;
@@ -41,6 +40,10 @@ const MenuWrapper = styled.div`
 
     &:hover {
       color: ${({ theme: { primary } }) => primary.s4};
+    }
+
+    a {
+      font-size: 18px;
     }
   }
 
@@ -72,8 +75,13 @@ export default function Menu({ menuState, changeMenu }) {
         <Container>
           <ul>
             <li>
-              <Link onClick={changeMenu} to="/">
-                HOME
+              <Link onClick={changeMenu} to="/overMij">
+                OVER MIJ
+              </Link>
+            </li>
+            <li>
+              <Link onClick={changeMenu} to="/visie">
+                VISIE
               </Link>
             </li>
             <li>
@@ -81,11 +89,7 @@ export default function Menu({ menuState, changeMenu }) {
                 BLOG
               </Link>
             </li>
-            <li>
-              <Link onClick={changeMenu} to="/overMij">
-                OVER MIJ
-              </Link>
-            </li>
+
             <li>
               <button
                 onClick={() => {

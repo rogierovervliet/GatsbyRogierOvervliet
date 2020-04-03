@@ -71,23 +71,35 @@ export default function Nav() {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
   }
 
+  const Query =
+    typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
+
   return (
     <NavWrapper fixed={true}>
       <FlexContainer>
         <Hamburger menuState={menuState} changeMenu={changeMenu} />
-        <Link to="/">
+        <Link
+          to="/"
+          style={{ position: "relative", zIndex: 1000 }}
+          onClick={() => {
+            if (!Query.matches && menuState === "open") {
+              changeMenu();
+            }
+          }}
+        >
           <Logo src={logo} alt="logo-Rogier-Overvliet" />
         </Link>
         <MenuItems>
-          <Link to="/">
-            <li>HOME</li>
+          <Link to="/overMij">
+            <li>OVER MIJ</li>
+          </Link>
+          <Link to="/visie">
+            <li>VISIE</li>
           </Link>
           <Link to="/blog">
             <li>BLOG</li>
           </Link>
-          <Link to="/overMij">
-            <li>OVER MIJ</li>
-          </Link>
+
           <li>
             <Button onClick={handleChange}>CONTACT</Button>
           </li>

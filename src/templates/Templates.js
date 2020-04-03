@@ -18,7 +18,7 @@ export default function Templates({ data }) {
   return (
     <>
       <Head
-        title="PageTitle"
+        title={content.title}
         description="Page description goes here"
         keywords="content"
       />
