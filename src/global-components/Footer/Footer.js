@@ -11,8 +11,15 @@ import { Container } from "../../style/Mixins";
 // =========================
 
 const FooterWrap = styled.div`
-  height: 200px;
+  min-height: 200px;
   background: ${({ theme: { primary } }) => primary.s4};
+
+  padding-bottom: ${({ theme: { spacing } }) => spacing.s6};
+
+  @media screen and (min-width: 1000px) {
+    padding-bottom: 0;
+    height: 200px;
+  }
 `;
 
 const Grid = styled(Container)`
@@ -22,12 +29,6 @@ const Grid = styled(Container)`
   justify-content: center;
   justify-items: center;
 
-  @media screen and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    justify-items: initial;
-  }
-
   @media screen and (min-width: 1000px) {
     grid-template-columns: 1fr 100px 1fr;
   }
@@ -36,17 +37,27 @@ const Grid = styled(Container)`
 const Logo = styled.img`
   width: 100px;
 
+  padding-bottom: ${({ theme: { spacing } }) => spacing.s6};
+
   @media screen and (min-width: 1000px) {
     grid-column: 2;
   }
 `;
 
 const ContactGegevens = styled.div`
-  display: none;
   transform: translateY(10px);
+  padding-bottom: ${({ theme: { spacing } }) => spacing.s5};
 
   @media screen and (min-width: 1000px) {
-    display: block;
+    padding-bottom: 0;
+    justify-self: start;
+  }
+
+  #contact {
+    display: none;
+    @media screen and (min-width: 1000px) {
+      display: block;
+    }
   }
 
   div {
@@ -81,11 +92,6 @@ const Contact = styled.div`
 
 const SDG = styled.a`
   justify-self: end;
-  display: none;
-
-  @media screen and (min-width: 1000px) {
-    display: block;
-  }
 
   h3 {
     margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
@@ -120,18 +126,20 @@ export default function Footer() {
     <FooterWrap>
       <Grid>
         <ContactGegevens>
-          <div>
-            <p>{data.sanityContact.plaats.nl}</p>
-          </div>
-          <div>
-            <a href={`tel:${data.sanityContact.telefoon.nl}`}>
-              {data.sanityContact.telefoon.nl}{" "}
-            </a>
-          </div>
-          <div>
-            <a href={`mailto:${data.sanityContact.mail.nl}`}>
-              {data.sanityContact.mail.nl}{" "}
-            </a>
+          <div id="contact">
+            <div>
+              <p>{data.sanityContact.plaats.nl}</p>
+            </div>
+            <div>
+              <a href={`tel:${data.sanityContact.telefoon.nl}`}>
+                {data.sanityContact.telefoon.nl}{" "}
+              </a>
+            </div>
+            <div>
+              <a href={`mailto:${data.sanityContact.mail.nl}`}>
+                {data.sanityContact.mail.nl}{" "}
+              </a>
+            </div>
           </div>
           <Contact>
             <a
