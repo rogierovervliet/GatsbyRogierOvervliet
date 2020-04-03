@@ -11,6 +11,7 @@ import { Button } from "../style/Mixins";
 const Wrapper = styled.div`
   padding: ${({ theme: { spacing } }) => `${spacing.s6} 0 ${spacing.s10}`};
   min-height: 100vh;
+  position: relative;
 
   @media screen and (min-width: 1600px) {
     padding: ${({ theme: { spacing } }) => `${spacing.s9} 0 ${spacing.s10}`};
@@ -79,6 +80,21 @@ const IMG = styled(Img)`
 const Text = styled(BlockStyling)`
   padding-top: ${({ theme: { spacing } }) => spacing.s4};
   padding-bottom: ${({ theme: { spacing } }) => spacing.s2};
+
+  blockquote {
+    font-size: 24px;
+    font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
+    color: ${({ theme: { primary } }) => primary.s7};
+    line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
+
+    @media screen and (min-width: 1300px) {
+      position: absolute;
+      max-width: 375px;
+      right: calc(30px + 5vw);
+      bottom: 25vh;
+      font-size: 28px;
+    }
+  }
 `;
 
 const Grid = styled.div`

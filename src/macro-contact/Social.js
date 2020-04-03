@@ -66,7 +66,7 @@ export default function Social({ tel }) {
           </svg>
         </a>
         <a
-          href="https://www.facebook.com/rogier.overvliet"
+          href="https://www.facebook.com/rogierovervliet.nl/"
           target="_blank"
           rel="noopener noreferrer"
         >

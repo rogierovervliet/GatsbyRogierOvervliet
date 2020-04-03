@@ -51,7 +51,7 @@ export default function Overview({ content }) {
         <Title>{title}</Title>
 
         <LinkWrap to={`/${slug}`}>
-          <Button>Lees post</Button>
+          <Button>Lees blog</Button>
         </LinkWrap>
       </Card>
     );

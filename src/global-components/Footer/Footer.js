@@ -43,6 +43,7 @@ const Logo = styled.img`
 
 const ContactGegevens = styled.div`
   display: none;
+  transform: translateY(10px);
 
   @media screen and (min-width: 1000px) {
     display: block;
@@ -66,10 +67,11 @@ const ContactGegevens = styled.div`
 const Contact = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 150px;
+  width: 120px;
+  margin-top: ${({ theme: { spacing } }) => spacing.s3};
 
   img {
-    width: 35px;
+    width: 30px;
 
     &:hover {
       transform: scale(1.05);
@@ -77,24 +79,23 @@ const Contact = styled.div`
   }
 `;
 
-const Flex = styled.div`
-  justify-self: end;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: end;
-`;
-
 const SDG = styled.a`
+  justify-self: end;
   display: none;
 
   @media screen and (min-width: 1000px) {
     display: block;
   }
 
+  h3 {
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s1};
+    color: white;
+    opacity: 0.7;
+    font-size: 19px;
+  }
+
   img {
     width: 325px;
-    margin-top: ${({ theme: { spacing } }) => spacing.s6};
   }
 `;
 
@@ -132,9 +133,6 @@ export default function Footer() {
               {data.sanityContact.mail.nl}{" "}
             </a>
           </div>
-        </ContactGegevens>
-        <Logo src={logo} alt="logo-Rogier-Overvliet" />
-        <Flex>
           <Contact>
             <a
               href="https://www.linkedin.com/in/rogierovervliet/"
@@ -144,7 +142,7 @@ export default function Footer() {
               <img src={LinkedIn} alt="LinkedIn" />
             </a>
             <a
-              href="https://www.facebook.com/rogier.overvliet"
+              href="https://www.facebook.com/rogierovervliet.nl/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -158,14 +156,17 @@ export default function Footer() {
               <img src={WhatsApp} alt="WhatsApp" />
             </a>
           </Contact>
-          <SDG
-            href="https://www.sdgnederland.nl/user/rogierovervliet/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={SDGC} alt="SDGC" />
-          </SDG>
-        </Flex>
+        </ContactGegevens>
+        <Logo src={logo} alt="logo-Rogier-Overvliet" />
+
+        <SDG
+          href="https://www.sdgnederland.nl/user/rogierovervliet/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h3>OFFICIEEL PARTNER: </h3>
+          <img src={SDGC} alt="SDGC" />
+        </SDG>
       </Grid>
     </FooterWrap>
   );
