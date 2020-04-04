@@ -67,7 +67,6 @@ const Background = styled.div`
 `;
 
 const IMG = styled(Img)`
-  max-width: 350px;
   margin: 0 auto;
 
   @media screen and (min-width: 1000px) {
@@ -100,7 +99,7 @@ const Text = styled(BlockStyling)`
 const Grid = styled.div`
   @media screen and (min-width: 1000px) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1.5fr;
   }
 `;
 
@@ -109,10 +108,11 @@ const PictureWrapDesktop = styled.div`
   position: relative;
 
   @media screen and (min-width: 1000px) {
+    width: 100%;
+    max-width: 450px;
     display: block;
-    max-width: calc(200px + 8vw);
     align-self: center;
-    transform: translateX(5vw);
+    transform: translateX(8vw);
   }
 `;
 

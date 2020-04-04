@@ -45,13 +45,13 @@ const Service = styled.div`
     grid-column-gap: ${({ theme: { spacing } }) => spacing.s8};
     align-items: center;
     align-content: center;
-    margin-bottom: ${({ theme: { spacing }, serviceIndex }) =>
-      serviceIndex !== 3 && spacing.s12};
+    margin-bottom: ${({ theme: { spacing }, serviceIndex, totalServices }) =>
+      serviceIndex !== totalServices && spacing.s12};
   }
 
   @media screen and (min-width: 1600px) {
-    margin-bottom: ${({ theme: { spacing }, serviceIndex }) =>
-      serviceIndex !== 3 && spacing.s13};
+    margin-bottom: ${({ theme: { spacing }, serviceIndex, totalServices }) =>
+      serviceIndex !== totalServices && spacing.s13};
   }
 
   .justify {
@@ -64,8 +64,8 @@ const Service = styled.div`
     max-width: 350px;
     height: 220px;
     margin: 0 auto;
-    margin-bottom: ${({ theme: { spacing }, serviceIndex }) =>
-      serviceIndex !== 3 && spacing.s10};
+    margin-bottom: ${({ theme: { spacing }, serviceIndex, totalServices }) =>
+      serviceIndex !== totalServices && spacing.s10};
 
     @media screen and (min-width: 600px) {
       max-width: 420px;
@@ -150,13 +150,20 @@ export default function Services({ content }) {
     return combinedArr;
   });
 
+  const totalServices = combinedContent.length - 1;
+
   const services = combinedContent.map((e, index) => {
     const picture = e.afbeelding.asset.fluid;
     const name = e.raw.naam.nl;
     const text = e.raw.tekst;
 
     return (
-      <Service key={name} position={isEven(index)} serviceIndex={index}>
+      <Service
+        key={name}
+        position={isEven(index)}
+        serviceIndex={index}
+        totalServices={totalServices}
+      >
         <div className="justify">
           <Title>{name}</Title>
           <Style>
