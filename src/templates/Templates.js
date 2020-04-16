@@ -12,7 +12,8 @@ export default function Templates({ data }) {
     title: post.titel.nl,
     picture: post.Afbeelding.asset.fluid,
     date: post.Datum,
-    text: post._rawTekst
+    text: post._rawTekst,
+    titles: data.allSanityBlogPost.nodes,
   };
 
   return (
@@ -31,6 +32,13 @@ export default function Templates({ data }) {
 
 export const query = graphql`
   query PageQuery($slug: String!) {
+    allSanityBlogPost(sort: { fields: Datum, order: DESC }) {
+      nodes {
+        titel {
+          nl
+        }
+      }
+    }
     sanityBlogPost(titel: { nl: { eq: $slug } }) {
       titel {
         nl

@@ -38,12 +38,9 @@ const Title = styled.h3`
 const LinkWrap = styled(Link)``;
 
 export default function Overview({ content }) {
-  const posts = content.map(e => {
+  const posts = content.map((e) => {
     const title = e.titel.nl;
-    const slug = title
-      .toLowerCase()
-      .replace(/\s+/g, "-")
-      .slice(0, 200);
+    const slug = title.toLowerCase().replace(/\s+/g, "-").slice(0, 200);
     const image = e.Afbeelding.asset.fluid;
 
     return (

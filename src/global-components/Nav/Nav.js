@@ -1,6 +1,7 @@
 // Components==============
 import logo from "assets/Logo-Rogier-Overvliet.svg";
 import { Link } from "gatsby";
+import { useMediaQ } from "hooks-lib";
 import { Container } from "mixins";
 import React, { useContext, useState } from "react";
 import styled, { css } from "styled-components";
@@ -79,8 +80,7 @@ export default function Nav() {
     menuState === "closed" ? setMenuState("open") : setMenuState("closed");
   }
 
-  const Query =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 850px)");
+  const Query = useMediaQ("min", 580);
 
   return (
     <NavWrapper fixed={true}>
@@ -90,7 +90,7 @@ export default function Nav() {
           to="/"
           style={{ position: "relative", zIndex: 1000 }}
           onClick={() => {
-            if (!Query.matches && menuState === "open") {
+            if (!Query && menuState === "open") {
               changeMenu();
             }
           }}

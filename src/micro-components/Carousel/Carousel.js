@@ -1,4 +1,5 @@
 // Components==============
+import { useMediaQ } from "hooks-lib";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -76,18 +77,17 @@ const Slide = styled(Slider)`
 `;
 
 export default function Carousel({ children }) {
-  const Query =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 800px)");
+  const Query = useMediaQ("min", 800);
 
   var settings = {
     infinite: true,
     speed: 500,
     dots: true,
-    slidesToShow: Query.matches ? 2 : 1,
+    slidesToShow: Query ? 2 : 1,
     slidesToScroll: 1,
-    arrows: Query.matches,
+    arrows: Query,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
   };
   return (
     <SlideWrapper>

@@ -3,6 +3,7 @@ import placeholder from "assets/placeholder.jpg";
 import mp4 from "assets/rogierPromo.mp4";
 import mp4Small from "assets/rogierPromoMobile.mp4";
 import { motion } from "framer-motion";
+import { useMediaQ } from "hooks-lib";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 // =========================
@@ -96,11 +97,9 @@ export default function Video() {
 
   const videoRef = useRef();
 
-  const query =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 1250px)");
+  const query = useMediaQ("min", 1250);
 
-  const videoQuery =
-    typeof window !== "undefined" && window.matchMedia("(min-width: 700px)");
+  const videoQuery = useMediaQ("min", 700);
 
   const mute = () => {
     if (hover) {
@@ -113,7 +112,7 @@ export default function Video() {
   return (
     <VideoWrap
       onMouseEnter={() => {
-        if (query.matches === true) {
+        if (query === true) {
           setHover(true);
         }
       }}
@@ -132,7 +131,7 @@ export default function Video() {
         crossOrigin="anonymous"
         poster={placeholder}
       >
-        {videoQuery.matches ? (
+        {videoQuery ? (
           <source src={mp4} type="video/mp4" />
         ) : (
           <source src={mp4Small} type="video/mp4" />
@@ -154,9 +153,9 @@ export default function Video() {
           hover: {
             x: 0,
             y: 0,
-            scale: 0.98
+            scale: 0.98,
           },
-          noHover: { x: 27.5, y: 27.5, scale: 1 }
+          noHover: { x: 27.5, y: 27.5, scale: 1 },
         }}
         initial={{ x: 0, y: 0, scale: 0.98 }}
       />
