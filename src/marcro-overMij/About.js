@@ -90,7 +90,7 @@ const Text = styled(BlockStyling)`
       position: absolute;
       max-width: 375px;
       right: calc(30px + 5vw);
-      bottom: 25vh;
+      bottom: 170px;
       font-size: 28px;
     }
   }
