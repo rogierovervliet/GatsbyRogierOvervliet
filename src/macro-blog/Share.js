@@ -17,11 +17,11 @@ const Flex = styled.div`
   }
 `;
 
-export default function Share() {
+export default function Share({ page }) {
   return (
     <Flex>
       <a
-        href="https://rogierovervliet.nl/het-verloren-hout/?share=linkedin"
+        href={`https://www.linkedin.com/shareArticle?mini=true&url=https://rogierovervliet.nl/${page}&title=${page}`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -47,7 +47,7 @@ export default function Share() {
         </svg>
       </a>
       <a
-        href="https://rogierovervliet.nl/het-verloren-hout/?share=jetpack-whatsapp&nb=1"
+        href={`whatsapp://send?text=https://rogierovervliet.nl/${page}`}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -74,7 +74,7 @@ export default function Share() {
         </svg>
       </a>
       <a
-        href="https://rogierovervliet.nl/is-kwetsbaarheid-het-nieuwe-eerlijk-zijn/?share=facebook&nb=1"
+        href={`https://www.facebook.com/sharer/sharer.php?u=rogierovervliet.nl/${page}`}
         target="_blank"
         rel="noopener noreferrer"
       >

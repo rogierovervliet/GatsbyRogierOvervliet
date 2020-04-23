@@ -5,8 +5,8 @@ import { useMediaQ } from "hooks-lib";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Block from "../micro-components/Block";
-import Share from "../micro-components/Share";
 import { BlockStyling, Container } from "../style/Mixins";
+import Share from "./Share";
 // =========================
 
 const Wrapper = styled.div`
@@ -146,7 +146,7 @@ export default function Template({ content }) {
           </BlockStyling>
           <Flex>
             <span>Deel deze post:</span>
-            <Share />
+            <Share page={createSlug(content.title)} />
           </Flex>
           <Browse>
             {previousPost && (
