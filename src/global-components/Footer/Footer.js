@@ -157,7 +157,7 @@ export default function Footer() {
               <img src={Facebook} alt="Facebook" />
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=0402405522"
+              href="https://api.whatsapp.com/send?phone=+310402405522"
               target="_blank"
               rel="noopener noreferrer"
             >
