@@ -7,15 +7,16 @@ import { BlockStyling, flexUnit } from "../style/Mixins";
 // =========================
 
 const Wrapper = styled.div`
-  margin-top: ${({ theme: { spacing } }) => spacing.s10};
+  padding-top: 1.5em;
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s10};
 `;
 
-const MainTitle = styled.h2`
-  text-align: center;
-  margin-bottom: ${({ theme: { spacing } }) => spacing.s7};
+const MainTitle = styled.h1`
+  margin-bottom: ${({ theme: { spacing } }) => spacing.s5};
+  line-height: 1.6;
 
   @media screen and (min-width: 800px) {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s9};
+    margin-bottom: ${({ theme: { spacing } }) => spacing.s6};
   }
 `;
 

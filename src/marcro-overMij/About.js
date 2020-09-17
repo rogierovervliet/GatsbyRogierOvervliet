@@ -28,6 +28,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   text-align: center;
   line-height: ${({ theme: { lineHeight } }) => lineHeight.s4};
+  margin-bottom: 0.5em;
 
   @media screen and (min-width: 1000px) {
     text-align: left;
@@ -77,7 +78,6 @@ const IMG = styled(Img)`
 `;
 
 const Text = styled(BlockStyling)`
-  padding-top: ${({ theme: { spacing } }) => spacing.s4};
   padding-bottom: ${({ theme: { spacing } }) => spacing.s2};
 
   blockquote {

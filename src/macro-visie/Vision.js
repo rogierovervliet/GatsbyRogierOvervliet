@@ -7,15 +7,20 @@ import { BlockStyling, Container } from "../style/Mixins";
 
 const Wrapper = styled.div`
   position: relative;
-  padding-top: ${({ theme: { spacing } }) => spacing.s8};
+  padding-top: 1.5em;
   padding-bottom: ${({ theme: { spacing } }) => spacing.s10};
 
   h1 {
-    margin-bottom: ${({ theme: { spacing } }) => spacing.s4};
+    margin-bottom: 0.5em;
+    line-height: 1.6;
   }
 
   h5 {
     margin-bottom: ${({ theme: { spacing } }) => spacing.s3};
+
+    :first-child {
+      margin-top: 0;
+    }
   }
 
   strong {

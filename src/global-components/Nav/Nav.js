@@ -105,7 +105,7 @@ export default function Nav() {
             <Link to="/visie">VISIE</Link>
           </li>
           <li>
-            <Link to="/blog">BLOG</Link>
+            <Link to="/aanbod">AANBOD</Link>
           </li>
           <li>
             <Button onClick={handleChange}>CONTACT</Button>

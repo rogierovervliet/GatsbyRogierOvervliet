@@ -6,6 +6,13 @@ import Overview from "../macro-blog/Overview";
 // =========================
 
 export default function blog({ data }) {
+  if (true) {
+    return (
+      <h1 style={{ paddingTop: "2em", textAlign: "center" }}>
+        This page doesn't exist anymore
+      </h1>
+    );
+  }
   return (
     <>
       <Head

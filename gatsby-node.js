@@ -7,44 +7,46 @@ exports.onCreatePage = ({ page, actions }) => {
     ...page,
 
     context: {
-      ...page.context
-    }
+      ...page.context,
+    },
   });
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+// BLOG POSTS
 
-  const result = await graphql(`
-    {
-      allSanityBlogPost {
-        nodes {
-          titel {
-            nl
-          }
-        }
-      }
-    }
-  `);
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions;
 
-  if (result.errors) {
-    throw result.errors;
-  }
+//   const result = await graphql(`
+//     {
+//       allSanityBlogPost {
+//         nodes {
+//           titel {
+//             nl
+//           }
+//         }
+//       }
+//     }
+//   `);
 
-  const projects = result.data.allSanityBlogPost.nodes || [];
-  projects.forEach(edge => {
-    const slug = edge.titel.nl
-      .toLowerCase()
-      .replace(/\s+/g, "-")
-      .replace("?", "")
-      .slice(0, 200);
+//   if (result.errors) {
+//     throw result.errors;
+//   }
 
-    const path = `/${slug}`;
+//   const projects = result.data.allSanityBlogPost.nodes || [];
+//   projects.forEach(edge => {
+//     const slug = edge.titel.nl
+//       .toLowerCase()
+//       .replace(/\s+/g, "-")
+//       .replace("?", "")
+//       .slice(0, 200);
 
-    createPage({
-      path,
-      component: require.resolve("./src/templates/Templates.js"),
-      context: { slug: edge.titel.nl }
-    });
-  });
-};
+//     const path = `/${slug}`;
+
+//     createPage({
+//       path,
+//       component: require.resolve("./src/templates/Templates.js"),
+//       context: { slug: edge.titel.nl }
+//     });
+//   });
+// };

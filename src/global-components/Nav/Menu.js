@@ -85,8 +85,8 @@ export default function Menu({ menuState, changeMenu }) {
               </Link>
             </li>
             <li>
-              <Link onClick={changeMenu} to="/blog">
-                BLOG
+              <Link onClick={changeMenu} to="/aanbod">
+                AANBOD
               </Link>
             </li>
 
