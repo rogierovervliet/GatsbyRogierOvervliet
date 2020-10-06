@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
    }
 
    #gatsby-focus-wrapper{
+      overflow: hidden;
       position: relative;
    }
 

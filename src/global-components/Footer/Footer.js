@@ -140,6 +140,9 @@ export default function Footer() {
                 {data.sanityContact.mail.nl}{" "}
               </a>
             </div>
+            <div>
+              <p>KVK: 80473881</p>
+            </div>
           </div>
           <Contact>
             <a

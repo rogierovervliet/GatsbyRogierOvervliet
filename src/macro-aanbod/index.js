@@ -84,6 +84,7 @@ const Service = styled.div`
 
   .bg {
     display: none;
+    pointer-events: none;
 
     @media screen and (min-width: 800px) {
       display: ${({ serviceIndex }) =>
@@ -109,6 +110,7 @@ const Service = styled.div`
   }
 
   .bgMobile {
+    pointer-events: none;
     position: absolute;
     width: 120vw;
     height: 90%;
